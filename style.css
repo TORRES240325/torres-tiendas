@@ -1,0 +1,296 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a); /* negro degradado */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  width: 900px;
+  max-width: 95%;
+  background: #111;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5); /* brillo rojo */
+}
+
+/* Lado izquierdo */
+.left {
+  flex: 1;
+  background: #0d0d0d;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.left .logo {
+  width: 80px;
+  margin: 0 auto 20px;
+}
+
+.left h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff0000; /* rojo */
+  text-shadow: 0 0 10px #ff0000, 0 0 25px #ff4d4d; /* brillo rojo */
+}
+
+.left p {
+  margin: 10px 0 20px;
+  color: #ccc;
+}
+
+.left .features div {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+/* Lado derecho */
+.right {
+  flex: 1;
+  background: #1a1a1a;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.right p {
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+  font-size: 0.9rem;
+}
+
+form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  background: #2b2b2b;
+  color: white;
+}
+
+form input:focus {
+  outline: 2px solid #ff0000;
+}
+
+/* Botón principal */
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff0000, #990000);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #990000;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff0000, 0 0 45px #990000;
+}
+
+.links {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Redes sociales */
+.social {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Botón WhatsApp */
+.btn-social.whatsapp {
+  border: 2px solid #25d366;
+  color: #25d366;
+  box-shadow: 0 0 10px #25d36650;
+}
+.btn-social.whatsapp:hover {
+  background: #25d366;
+  color: #000;
+  box-shadow: 0 0 20px #25d366;
+}
+
+/* Botón Telegram */
+.btn-social.telegram {
+  border: 2px solid #0088cc;
+  color: #0088cc;
+  box-shadow: 0 0 10px #0088cc50;
+}
+.btn-social.telegram:hover {
+  background: #0088cc;
+  color: #fff;
+  box-shadow: 0 0 20px #0088cc;
+}
+
+/* Features */
+.features {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+  border: 2px solid #ff0000; /* borde rojo siempre */
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.8); /* glow rojo siempre */
+}
+
+.feature:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* más brillo en hover */
+  transform: scale(1.02);
+}
+
+.feature img {
+  width: 32px;
+  height: 32px;
+}
+
+.feature span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.logo {
+  width: 80px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.btn-social {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #00e0ff;  /* borde azul clarito */
+  border-radius: 8px;
+  background: #2b2b2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  position: relative;
+  border-left: 3px solid transparent;
+}
+
+.sidebar ul li a:hover {
+  background: linear-gradient(90deg, rgba(0,234,255,0.15), rgba(255,0,255,0.15));
+  color: #fff;
+  transform: translateX(5px);
+  border-left: 3px solid #00eaff;
+}
+
+/* 🔹 Ajustes responsive para pantallas pequeñas (celular) */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .container {
+    flex-direction: column; /* izquierda arriba, derecha abajo */
+    width: 100%;
+    margin: 10px;
+  }
+
+  .left, .right {
+    padding: 20px;
+  }
+
+  .left h1 {
+    font-size: 2rem;
+  }
+
+  .right h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .social {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

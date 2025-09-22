@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - TorresXiters</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Lado izquierdo -->
+    <div class="left">
+      <img src="TORRES LOGO.png" alt="Logo" class="logo">
+      <h1>TORRES <span>XITER</span></h1>
+      <p>Los mejores productos, al mejor precio</p>
+    <div class="features">
+  <div class="feature">
+    <img src="https://img.icons8.com/fluency/48/shield.png" alt="seguro">
+    <span>Productos Seguros Para Revender</span>
+  </div>
+  <div class="feature">
+    <img src="https://img.icons8.com/fluency/48/lightning-bolt.png" alt="precios">
+    <span>Precios -70% valor Original</span>
+  </div>
+  <div class="feature">
+    <img src="https://img.icons8.com/fluency/48/conference-call.png" alt="socios">
+    <span>Más de 5mil Socios</span>
+  </div>
+</div>
+    </div>
+
+    <!-- Lado derecho -->
+    <div class="right">
+      <h2>Iniciar Sesión</h2>
+      <p>Accede a tu cuenta para continuar</p>
+
+      <form id="loginForm">
+        <label for="usuario">Usuario</label>
+        <input type="email" id="usuario" placeholder="Escribe tu correo" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Escribe tu contraseña" required>
+
+        <button type="submit" class="btn">🔐 Iniciar Sesión</button>
+      </form>
+
+      <div class="links">
+    <a href="register.html">¿No tienes cuenta? Regístrate aquí</a>
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+
+   <div class="social">
+  <a href="https://wa.me/51910230299" target="_blank" class="btn-social whatsapp">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="https://t.me/tuUsuarioTelegram" target="_blank" class="btn-social telegram">
+    <i class="fab fa-telegram"></i> Telegram
+  </a>
+</div>
+  </div>
+  </div>
+
+  <!-- Tu script.js original -->
+  <script src="script.js"></script>
+
+  <!-- 🚀 Script de Firebase para login -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } 
+      from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+
+    // ⚡ Pega aquí tu configuración de Firebase
+ const firebaseConfig = {
+  apiKey: "AIzaSyBEc4MX5HK-5PLeO_TRUjUPzLAHUE_u8-o",
+  authDomain: "torres-xit.firebaseapp.com",
+  projectId: "torres-xit",
+  storageBucket: "torres-xit.firebasestorage.app",
+  messagingSenderId: "921212566446",
+  appId: "1:921212566446:web:f71ab98ddcd4166264263f"
+};
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Capturar formularioS
+    const form = document.getElementById("loginForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("usuario").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        alert("✅ Bienvenido " + userCredential.user.email);
+        // Redirigir después de login
+        window.location.href = "prudctos.html";
+      } catch (error) {
+        alert("❌ Error: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

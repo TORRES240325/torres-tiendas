@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Torres Store</title>
+  <!-- Importamos librería de iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+body {
+  display: flex;
+  background: url("img/fondo web rojo.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  height: 100vh;
+}
+
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+  width: 230px;
+  background: linear-gradient(180deg, #050505, #0a0a0a);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #ff0000; /* rojo neón */
+  box-shadow: 0 0 15px #ff0000; /* brillo lateral */
+}
+    /* Logo y título */
+   .logo {
+  text-align: center;
+  padding: 25px 15px;
+  border-bottom: 1px solid #ff0000;
+}
+    .logo img {
+  width: 60px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 10px #ff0000); /* efecto neón */
+}
+.logo h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.logo h2 .red {
+  color: #ff0000;
+  text-shadow: 0 0 8px #ff0000, 0 0 15px #ff3333;
+}
+.logo h2 .white {
+  color: #ffffff;
+  text-shadow: 0 0 6px #fff, 0 0 12px #aaa;
+}
+.logo p {
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+    .sidebar h3 {
+      font-size: 12px;
+      color: #888;
+      margin: 20px 0 10px 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+   .sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  transition: 0.3s;
+  font-size: 15px;
+}
+.sidebar ul li a i {
+  width: 20px;
+  text-align: center;
+  color: #ff0000;
+  text-shadow: 0 0 8px #ff0000, 0 0 15px #ff3333;
+}
+.sidebar ul li a:hover {
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff0000;
+  text-shadow: 0 0 8px #ff0000, 0 0 18px #ff3333;
+  padding-left: 25px;
+}
+
+
+    /* ===== Contenido ===== */
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .topbar {
+  height: 70px;
+  background: linear-gradient(90deg, #000000, #111111, #1a1a1a);
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 2px solid #ff0000;
+  box-shadow: 0 0 15px #ff0000;
+}
+.topbar .brand {
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #fff;
+}
+.topbar .red {
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+}
+.topbar .white {
+  color: #ffffff;
+  text-shadow: 0 0 6px #fff, 0 0 12px #aaa;
+}
+
+   .main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.9), #000);
+  text-align: center;
+}
+.main h1 {
+  font-size: 55px;
+  font-weight: bold;
+  color: #ff0000;
+  text-shadow: 0 0 15px #ff0000, 0 0 25px #ff3333;
+}
+.main h1 span {
+  color: #ffffff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #aaa;
+}
+.main p {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #ccc;
+  text-shadow: 0 0 6px #fff;
+}
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-red {
+  background: #ff0000;
+  color: white;
+  box-shadow: 0 0 15px #ff0000, 0 0 25px #ff3333;
+}
+.btn-red:hover {
+  background: #cc0000;
+  box-shadow: 0 0 20px #ff0000, 0 0 30px #ff3333;
+}
+.btn-white {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 15px #fff, 0 0 25px #aaa;
+}
+.btn-white:hover {
+  background: #ddd;
+  box-shadow: 0 0 20px #fff, 0 0 30px #aaa;
+}
+    .discover {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #aaa;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+   <img src="img/TORRES LOGO.png" alt="TorresXiters Logo">
+      <h2><span class="blue">Torres</span><span class="pink">Xiters</span></h2>
+      <p>MENU PRINCIPAL</p>
+    </div>
+
+    <h3>Principal</h3>
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
+      <li><a href="#"><i class="fa-solid fa-bag-shopping"></i> Productos</a></li>
+
+    </ul>
+
+    <h3>Acceso</h3>
+    <ul>
+      <li><a href="principal.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a></li>
+    </ul>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content">
+    <header class="topbar">
+      <div class="brand">🎮 <span class="blue">Torres</span> <span class="pink">Xiters</span></div>
+    </header>
+
+    <div class="main">
+      <h1>Torres <span>Store</span></h1>
+      <p>La mejor tienda de llaves digitales para tus juegos favoritos</p>
+
+    <div class="buttons">
+  <a href="register.html"><button class="btn btn-red">REGISTRATE BB</button></a>
+  <a href="principal.html"><button class="btn btn-white">INICIAR SESIÓN</button></a>
+</div>
+
+
+      <div class="discover">DESCUBRE MÁS</div>
+    </div>
+  </div>
+
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyBEc4MX5HK-5PLeO_TRUjUPzLAHUE_u8-o",
+  authDomain: "torres-xit.firebaseapp.com",
+  projectId: "torres-xit",
+  storageBucket: "torres-xit.firebasestorage.app",
+  messagingSenderId: "921212566446",
+  appId: "1:921212566446:web:f71ab98ddcd4166264263f"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Función para registrar
+  window.register = function () {
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        alert("Usuario registrado: " + userCredential.user.email);
+      })
+      .catch(error => {
+        alert("Error: " + error.message);
+      });
+  }
+</script>
+</html>
